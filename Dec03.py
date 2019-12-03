@@ -1,4 +1,4 @@
-"""Advent of Code Day 2"""
+"""Advent of Code Day 3"""
 
 import time
 
@@ -153,39 +153,6 @@ def locations2_steps(mylist,a):
                 if thisloc in a.keys():
                     inters[thisloc] = steps + a[thisloc]
 
-    return inters
-
-def locations2_steps1(mylist,list2):#not used
-    """calculates locations from
-    directions in mylist, adds to intersections
-    list if in list2"""
-    loc = [0,0]
-    inters = list()
-    for d in mylist:
-        if d[0] == 'R':
-            distance = int(d[1:])
-            for i in range(1,distance+1):
-                loc = [loc[0]+1,loc[1]]
-                if loc in list2:
-                    inters.append(loc)
-        if d[0] == 'L':
-            distance = int(d[1:])
-            for i in range(1,distance+1):
-                loc = [loc[0] - 1, loc[1]]
-                if loc in list2:
-                    inters.append(loc)
-        if d[0] == 'D':
-            distance = int(d[1:])
-            for i in range(1,distance+1):
-                loc = [loc[0], loc[1]-1]
-                if loc in list2:
-                    inters.append(loc)
-        if d[0] == 'U':
-            distance = int(d[1:])
-            for i in range(1,distance+1):
-                loc = [loc[0], loc[1]+1]
-                if loc in list2:
-                    inters.append(loc)
     return inters
 
 def intersections(a,b):
